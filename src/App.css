@@ -1,0 +1,11 @@
+/* Add this CSS */
+.social-icon {
+  filter: brightness(1) saturate(1) invert(0) sepia(100%) saturate(0%) hue-rotate(180deg);
+  /* Adjust these values */
+  transition: filter 0.3s ease;
+}
+
+.social-icon:hover {
+  filter: brightness(0) saturate(1) invert(0) sepia(100%) saturate(1000%) hue-rotate(180deg);
+  /* Change to desired hover color */
+}
