@@ -1,50 +1,33 @@
-# React + TypeScript + Vite
+# Project Name: BioCard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview:
+BioCard is a web application that allows users to create and share their personalized digital business cards. Users can showcase their profile picture, name, contact information, and social media links on a stylish web page resembling a traditional business card.
 
-Currently, two official plugins are available:
+## Technologies Used:
+- Vite
+- React with TypeScript
+- Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features Implemented:
+1. **Front Page:**
+   - Displays user's profile picture, name, contact information, and social media links in a business card layout.
+   
+2. **Dashboard:**
+   - Accessible only after creating an account.
+   - Allows users to:
+     - Modify the information displayed on their business card.
+     - Track the number of views on their business card.
+     - (Potential for future features to be added)
 
-## Expanding the ESLint configuration
+## Development Details:
+1. **Front Page Development:**
+   - Designed a visually appealing layout inspired by traditional business cards.
+   - Implemented icons, text, and layout using React components and Tailwind CSS.
+   
+2. **Current Status:**
+   - Front page development completed.
+   - Dashboard functionality to be implemented in the subsequent stages of the project.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Future Plans:
+- Implement user authentication for accessing the dashboard.
+- Develop dashboard functionality to allow users to edit their business card details and view analytics.
