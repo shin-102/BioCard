@@ -9,7 +9,7 @@ export const ActionIcon: React.FC<ActionIconProps> = ({ src, alt, linkTo }) => {
           loading="lazy"
           src={src}
           alt={alt}
-          className="object-contain w-full aspect-square"
+          className="object-contain w-full aspect-square menu-icon"
         />
       </a>
     );

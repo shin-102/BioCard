@@ -32,9 +32,9 @@ import phone from './assets/basil-phone-solid.svg';
 import email from './assets/basil-at-sign-solid.svg';
 import location from './assets/basil-location-solid.svg';
 const contactItems = [
-  { iconSrc: phone, text: "Number" },
-  { iconSrc: email, text: "Email" },
-  { iconSrc: location, text: "Address" }
+  { iconSrc: phone, text: "number" },
+  { iconSrc: email, text: "email" },
+  { iconSrc: location, text: "address" }
 ];
 
 // * ACTION MENU ICONS
@@ -50,36 +50,50 @@ import userIcon from './assets/basil-user-solid.svg';
 
 
 import './App.css'
-function App() {
+const App: React.FC = () => {
+  // Get LocalStorage data or display empty data
+  const userData = JSON.parse(localStorage.getItem('userData') || '{}');
+
   return (
     <main className="flex justify-between items-center overflow-hidden flex-wrap gap-10 m-20 p-20 bg-white rounded-[40px] max-md:px-5">
       <article className="flex flex-col self-stretch my-auto min-w-[240px] w-[588px] max-md:max-w-full">
+        
+        {/*//* TOP LEFT - NAME AND ROLE  */}
         <div className="flex flex-col justify-center max-w-full text-black w-[306px]">
-          <div className="text-6xl font-bold max-md:text-4xl">Full Name</div>
-          <div className="mt-5 text-5xl font-semibold max-md:text-4xl">Title</div>
+          <div className="text-6xl font-bold max-md:text-4xl">{userData.fullName}</div>
+          <div className="mt-5 text-5xl font-semibold max-md:text-4xl">{userData.title}</div>
         </div>
+
         <div className="flex flex-col justify-center mt-64 w-full max-md:mt-10 max-md:max-w-full">
+          
+          {/*//* BOTTOM LEFT 1 - CONTACT  */}
           <div className="flex flex-col justify-center self-start text-4xl text-black whitespace-nowrap">
             {contactItems.map((item, index) => (
               <div key={index} className={index > 0 ? "mt-5" : ""}>
-                <ContactItem iconSrc={item.iconSrc} text={item.text} />
+                <ContactItem iconSrc={item.iconSrc} text={userData[item.text]} />
               </div>
             ))}
           </div>
-          <div className="flex flex-wrap gap-3 items-center mt-20 w-full max-md:mt-10 max-md:max-w-full text-blue-500 fill-blue-500">
+          
+          {/*//* BOTTOM LEFT 2 - SOCIALS  */}
+          <div className="flex flex-wrap gap-3 items-center mt-20 w-full max-md:mt-10 max-md:max-w-full">
             {socialIcons.map((icon, index) => (
               <SocialIcon key={index} src={icon.src} alt={icon.alt}/>
             ))}
           </div>
         </div>
       </article>
+
       <article className="flex flex-col items-center self-stretch my-auto w-[180px]">
+        {/*//* TOP RIGHT - PROFILE  */}
         <img
           loading="lazy"
           src={userIcon}
           alt="Profile"
           className="object-contain max-w-full aspect-square w-[180px]"
         />
+
+        {/*//* BOTTOM RIGHT - PROFILE  */}
         <div className="flex flex-col justify-center items-center p-3 mt-80 rounded-xl border-2 border-black border-solid w-[72px] max-md:mt-10">
           {actionIcons.map((icon, index) => (
             <div key={index} className={index > 0 ? "mt-5" : ""}>
